@@ -23,6 +23,7 @@ public class UIActivity extends AppCompatActivity {
     private Button mBtnProgress;
     private Button mBtnCustom;
     private Button mBtnJump;
+    private Button mBtnPopup;
     private Button mBtnRecycler;
 
     @Override
@@ -41,6 +42,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnProgress = findViewById(R.id.btn_ProgressBar);
         mBtnCustom = findViewById(R.id.btn_custom_dialog);
         mBtnJump = findViewById(R.id.btn_jump);
+        mBtnPopup = findViewById(R.id.btn_popup);
         mBtnRecycler = findViewById(R.id.btn_recyclerview);
 
         setLisenters();
@@ -60,6 +62,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnProgress.setOnClickListener(onClick);
         mBtnCustom.setOnClickListener(onClick);
         mBtnJump.setOnClickListener(onClick);
+        mBtnPopup.setOnClickListener(onClick);
         mBtnRecycler.setOnClickListener(onClick);
     }
 
@@ -100,6 +103,9 @@ public class UIActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_jump:
                     intent = new Intent(UIActivity.this, AActivity.class);
+                    break;
+                case R.id.btn_popup:
+                    intent = new Intent(UIActivity.this, PopupWindowActivity.class);
                     break;
                 case R.id.btn_recyclerview:
                     intent = new Intent(UIActivity.this, RecyclerViewActivity.class);
