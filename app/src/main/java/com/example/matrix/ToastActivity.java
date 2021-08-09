@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.matrix.util.ToastUtill;
+import com.example.matrix.util.ToastUtil;
 
 public class ToastActivity extends AppCompatActivity {
 
@@ -32,12 +32,9 @@ public class ToastActivity extends AppCompatActivity {
         mBtn_toast2.setOnClickListener(onClick);
         mBtn_toast3.setOnClickListener(onClick);
         mBtn_toast4.setOnClickListener(onClick);
-
-
     }
 
     class OnClick implements View.OnClickListener {
-
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
@@ -50,7 +47,7 @@ public class ToastActivity extends AppCompatActivity {
                     toastcenter.show();
                     break;
                 case R.id.btn_toast3:
-                    Toast toastcustom = new Toast(getApplicationContext());
+                    Toast toastCustom = new Toast(getApplicationContext());
                     LayoutInflater inflater = LayoutInflater.from(ToastActivity.this);
 
                     View view = inflater.inflate(R.layout.layout_toast, null);
@@ -60,12 +57,12 @@ public class ToastActivity extends AppCompatActivity {
                     imageView.setImageResource(R.drawable.image1);
                     textView.setText("自定义Toast");
 
-                    toastcustom.setView(view);
-                    toastcustom.setDuration(Toast.LENGTH_LONG);
-                    toastcustom.show();
+                    toastCustom.setView(view);
+                    toastCustom.setDuration(Toast.LENGTH_LONG);
+                    toastCustom.show();
                     break;
                 case R.id.btn_toast4:
-                    ToastUtill.showMsg(getApplicationContext(), "长按的Toast/");
+                    ToastUtil.showMsg(getApplicationContext(), "包装过的Toast/");
                     break;
 
             }

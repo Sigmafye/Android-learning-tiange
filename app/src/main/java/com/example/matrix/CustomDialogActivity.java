@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.matrix.util.ToastUtill;
+import com.example.matrix.util.ToastUtil;
 import com.example.matrix.widget.CustomDialog;
 
 public class CustomDialogActivity extends AppCompatActivity {
@@ -25,12 +25,12 @@ public class CustomDialogActivity extends AppCompatActivity {
                         .setConfirm("确认", new CustomDialog.IOnConfirmListener() {
                             @Override
                             public void onConfirm(CustomDialog dialog) {
-                                ToastUtill.showMsg(CustomDialogActivity.this, "确认成功！");
+                                ToastUtil.showMsg(CustomDialogActivity.this, "确认成功！");
                             }
                         }).setCancel("取消", new CustomDialog.IOnCancelListener() {
                     @Override
                     public void onCancel(CustomDialog dialog) {
-                        ToastUtill.showMsg(CustomDialogActivity.this, "已取消！");
+                        ToastUtil.showMsg(CustomDialogActivity.this, "已取消！");
                     }
                 }).show();
             }

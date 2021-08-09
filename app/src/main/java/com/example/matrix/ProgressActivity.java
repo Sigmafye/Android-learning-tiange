@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
-import com.example.matrix.util.ToastUtill;
+import com.example.matrix.util.ToastUtil;
 
 public class ProgressActivity extends AppCompatActivity {
 
@@ -42,7 +42,7 @@ public class ProgressActivity extends AppCompatActivity {
                 progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
                     @Override
                     public void onCancel(DialogInterface dialog) {
-                        ToastUtill.showMsg(ProgressActivity.this, "cancel...");
+                        ToastUtil.showMsg(ProgressActivity.this, "cancel...");
                     }
                 });
                 progressDialog.show();
@@ -80,7 +80,7 @@ public class ProgressActivity extends AppCompatActivity {
             if (mpb_3.getProgress() < 100) {
                 handler.postDelayed(runnable, 500);
             } else {
-                ToastUtill.showMsg(ProgressActivity.this, "加载完成！");
+                ToastUtil.showMsg(ProgressActivity.this, "加载完成！");
             }
         }
     };

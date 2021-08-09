@@ -22,5 +22,6 @@
         android:id="@+id/btn_toast4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="带图片(自定义)"/>
+        android:text="ToastUtil(连续点击)"
+        android:textAllCaps="false"/>
 </LinearLayout>
