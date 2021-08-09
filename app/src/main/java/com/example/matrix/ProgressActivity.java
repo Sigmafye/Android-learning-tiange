@@ -26,9 +26,11 @@ public class ProgressActivity extends AppCompatActivity {
         mBtn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //启动Handler
                 handler.sendEmptyMessage(0);
             }
         });
+
 
         mBtn_progressdialog_1 = findViewById(R.id.btn_progress_1);
         mBtn_progressdialog_2 = findViewById(R.id.btn_progress_2);
@@ -45,14 +47,17 @@ public class ProgressActivity extends AppCompatActivity {
                         ToastUtil.showMsg(ProgressActivity.this, "cancel...");
                     }
                 });
+//                progressDialog.setCancelable(false);
                 progressDialog.show();
             }
         });
+
         mBtn_progressdialog_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ProgressDialog progressDialog = new ProgressDialog(ProgressActivity.this);
                 progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+
                 progressDialog.setTitle("提示：");
                 progressDialog.setMessage("正在下载...");
                 progressDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "暂停", new DialogInterface.OnClickListener() {
@@ -67,12 +72,14 @@ public class ProgressActivity extends AppCompatActivity {
 
                     }
                 });
+                progressDialog.show();
             }
         });
 
 
     }
 
+    //Handler和Runnable交替执行
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
