@@ -17,9 +17,9 @@ class MyGridViewAdapter extends BaseAdapter {
     private LayoutInflater mlayoutInflater;
 
 
-    MyGridViewAdapter(Context context){
+    MyGridViewAdapter(Context context) {
         this.mcontext = context;
-        mlayoutInflater = LayoutInflater.from( context );
+        mlayoutInflater = LayoutInflater.from(context);
     }
 
     @Override
@@ -37,27 +37,29 @@ class MyGridViewAdapter extends BaseAdapter {
         return 0;
     }
 
-    static class ViewHolder{
+    static class ViewHolder {
         public ImageView imagview;
         public TextView textview;
-    };
+    }
+
+    ;
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder=null;
-        if (convertView == null){
+        ViewHolder holder = null;
+        if (convertView == null) {
 
-            convertView = mlayoutInflater.inflate( R.layout.layout_grid_item,null);
+            convertView = mlayoutInflater.inflate(R.layout.layout_grid_item, null);
             holder = new ViewHolder();
-            holder.imagview = convertView.findViewById( R.id.iv_grid);
-            holder.textview = convertView.findViewById( R.id.iv_title );
-            convertView.setTag( holder );
+            holder.imagview = convertView.findViewById(R.id.iv_grid);
+            holder.textview = convertView.findViewById(R.id.iv_title);
+            convertView.setTag(holder);
 
-        }else {
+        } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.textview.setText( "I just kinda wish you were gay" );
-        Glide.with( mcontext ).load( "https://pic.baike.soso.com/ugc/baikepic2/14901/cut-20180802191530-254053648_jpg_237_296_12180.jpg/300" ).into( holder.imagview );
+        holder.textview.setText("I just kinda wish you were gay");
+        Glide.with(mcontext).load("https://pic.baike.soso.com/ugc/baikepic2/14901/cut-20180802191530-254053648_jpg_237_296_12180.jpg/300").into(holder.imagview);
 
         return convertView;
     }

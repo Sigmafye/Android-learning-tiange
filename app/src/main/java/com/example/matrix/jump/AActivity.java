@@ -13,22 +13,23 @@ import com.example.matrix.R;
 
 public class AActivity extends AppCompatActivity {
     private Button mbtn_jump;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_a );
-        mbtn_jump = findViewById( R.id.btn_jump );
-        mbtn_jump.setOnClickListener( new View.OnClickListener() {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_a);
+        mbtn_jump = findViewById(R.id.btn_jump);
+        mbtn_jump.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //显式一；
-                Intent intent = new Intent(AActivity.this,BActivity.class );
-                Bundle bundle = new Bundle(  );
-                bundle.putString( "name","Matrix" );
-                bundle.putInt( "No",9527 );
-                intent.putExtras( bundle );
+                Intent intent = new Intent(AActivity.this, BActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("name", "Matrix");
+                bundle.putInt("No", 9527);
+                intent.putExtras(bundle);
 //                startActivity( intent );
-                startActivityForResult( intent,0 );
+                startActivityForResult(intent, 0);
                 //显式二；
 //                Intent intent = new Intent(  );
 //                intent.setClass( AActivity.this,BActivity.class );
@@ -50,12 +51,12 @@ public class AActivity extends AppCompatActivity {
 //                startActivity( intent );
 
             }
-        } );
+        });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult( requestCode, resultCode, data );
-        Toast.makeText( AActivity.this,data.getExtras().getString( "return" ),Toast.LENGTH_SHORT ).show();
+        super.onActivityResult(requestCode, resultCode, data);
+        Toast.makeText(AActivity.this, data.getExtras().getString("return"), Toast.LENGTH_SHORT).show();
     }
 }

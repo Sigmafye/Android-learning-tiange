@@ -16,27 +16,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mBtnUIView =findViewById(R.id.btn_ui_view);
+        mBtnUIView = findViewById(R.id.btn_ui_view);
 
         setListeners();
 
     }
 
-    private void setListeners()
-    {
-        OnClick onClick=new OnClick();
+    private void setListeners() {
+        OnClick onClick = new OnClick();
         mBtnUIView.setOnClickListener(onClick);
     }
-    private class OnClick implements View.OnClickListener
-    {
+
+    private class OnClick implements View.OnClickListener {
         @Override
-        public void onClick(View view)
-        {
+        public void onClick(View view) {
             Intent intent = null;
-            switch (view.getId())
-            {
+            switch (view.getId()) {
                 case R.id.btn_ui_view:
-                    intent= new Intent(MainActivity.this,UIActivity.class);
+                    intent = new Intent(MainActivity.this, UIActivity.class);
                     startActivity(intent);
                     break;
                 default:

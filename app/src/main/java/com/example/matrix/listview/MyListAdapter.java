@@ -15,8 +15,7 @@ public class MyListAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater mLayoutInflater;
 
-    public MyListAdapter(Context context)
-    {
+    public MyListAdapter(Context context) {
         this.mContext = context;
         mLayoutInflater = LayoutInflater.from(context);
     }
@@ -37,25 +36,24 @@ public class MyListAdapter extends BaseAdapter {
     }
 
 
-    static class ViewHolder{
+    static class ViewHolder {
         public ImageView imageView;
-        public TextView tvtitle,tvtime,tvcontent;
+        public TextView tvtitle, tvtime, tvcontent;
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder = null;
-        if(view == null)
-        {
-            view =mLayoutInflater.inflate( R.layout.layout_list_item,null);
+        if (view == null) {
+            view = mLayoutInflater.inflate(R.layout.layout_list_item, null);
             holder = new ViewHolder();
             holder.imageView = view.findViewById(R.id.iv);
             holder.tvtitle = view.findViewById(R.id.tv_title);
             holder.tvcontent = view.findViewById(R.id.tv_content);
             holder.tvtime = view.findViewById(R.id.tv_time);
 
-            view.setTag( holder);
-        }else {
+            view.setTag(holder);
+        } else {
             holder = (ViewHolder) view.getTag();
         }
 

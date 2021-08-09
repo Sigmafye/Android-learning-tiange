@@ -46,6 +46,7 @@ public class GridRecyclerAdapter extends RecyclerView.Adapter<GridRecyclerAdapte
         // 实际开发中用列表的长度
         return 80;
     }
+
     //握着列表元素的静态类
     static class LinearRecyclerViewHolder extends RecyclerView.ViewHolder {
         private TextView textView;
@@ -56,7 +57,7 @@ public class GridRecyclerAdapter extends RecyclerView.Adapter<GridRecyclerAdapte
         }
     }
 
-    public interface MyItemClickListener{
+    public interface MyItemClickListener {
         void goClick(int pos);
     }
 

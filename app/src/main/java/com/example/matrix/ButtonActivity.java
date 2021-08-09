@@ -10,11 +10,12 @@ import android.widget.Toast;
 public class ButtonActivity extends AppCompatActivity {
     private Button mBtn_3;
     private TextView mBtv1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button);
-        mBtn_3=findViewById(R.id.btn_3);
+        mBtn_3 = findViewById(R.id.btn_3);
         mBtn_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,7 +32,7 @@ public class ButtonActivity extends AppCompatActivity {
         });
     }
 
-    public void ShowToast(View view){
-        Toast.makeText(this,"按钮4被点击了",Toast.LENGTH_SHORT).show();
+    public void ShowToast(View view) {
+        Toast.makeText(this, "按钮4被点击了", Toast.LENGTH_SHORT).show();
     }
 }
