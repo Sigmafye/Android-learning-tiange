@@ -127,6 +127,14 @@
             android:text="RecyclerView"
             android:textSize="18sp"
             android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/btn_lifecycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="LifeCycle"
+            android:textSize="18sp"
+            android:textAllCaps="false"/>
     </LinearLayout>
 
 </ScrollView>

@@ -25,6 +25,7 @@ public class UIActivity extends AppCompatActivity {
     private Button mBtnJump;
     private Button mBtnPopup;
     private Button mBtnRecycler;
+    private Button mBtnLifecycle;
 
     @Override
     protected void onCreate(Bundle saveInstanceState) {
@@ -44,6 +45,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnJump = findViewById(R.id.btn_jump);
         mBtnPopup = findViewById(R.id.btn_popup);
         mBtnRecycler = findViewById(R.id.btn_recyclerview);
+        mBtnLifecycle = findViewById(R.id.btn_lifecycle);
 
         setLisenters();
     }
@@ -64,6 +66,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnJump.setOnClickListener(onClick);
         mBtnPopup.setOnClickListener(onClick);
         mBtnRecycler.setOnClickListener(onClick);
+        mBtnLifecycle.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener {
@@ -109,6 +112,9 @@ public class UIActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_recyclerview:
                     intent = new Intent(UIActivity.this, RecyclerViewActivity.class);
+                    break;
+                case R.id.btn_lifecycle:
+                    intent = new Intent(UIActivity.this, LifeCycleActivity.class);
                     break;
                 default:
                     break;

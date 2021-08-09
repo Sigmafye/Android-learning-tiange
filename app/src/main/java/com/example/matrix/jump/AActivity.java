@@ -25,30 +25,31 @@ public class AActivity extends AppCompatActivity {
                 //显式一；
                 Intent intent = new Intent(AActivity.this, BActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("name", "Matrix");
-                bundle.putInt("No", 9527);
+                bundle.putString("name", "西罗");
+                bundle.putInt("number", 9527);
                 intent.putExtras(bundle);
 //                startActivity( intent );
                 startActivityForResult(intent, 0);
+
                 //显式二；
-//                Intent intent = new Intent(  );
-//                intent.setClass( AActivity.this,BActivity.class );
-//                startActivity( intent );
+//                Intent intent = new Intent();
+//                intent.setClass(AActivity.this, BActivity.class);
+//                startActivity(intent);
 
                 //显式三；
-//                Intent intent = new Intent(  );
-//                intent.setClassName( AActivity.this,"com.example.matrix.jump.BActivity" );
-//                startActivity( intent );
+//                Intent intent = new Intent();
+//                intent.setClassName(AActivity.this, "com.example.matrix.jump.BActivity");
+//                startActivity(intent);
 
                 //显式四；
-//                Intent intent = new Intent(  );
-//                intent.setComponent( new ComponentName( AActivity.this,"com.example.matrix.jump.BActivity" ) );
-//                startActivity( intent );
+//                Intent intent = new Intent();
+//                intent.setComponent(new ComponentName(AActivity.this, "com.example.matrix.jump.BActivity"));
+//                startActivity(intent);
 
                 //隐式一；
-//                Intent intent = new Intent(  );
-//                intent.setAction( "android.example.action.BActivity" );
-//                startActivity( intent );
+//                Intent intent = new Intent();
+//                intent.setAction("android.example.action.BActivity");
+//                startActivity(intent);
 
             }
         });

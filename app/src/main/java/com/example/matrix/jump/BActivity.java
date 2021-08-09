@@ -22,10 +22,10 @@ public class BActivity extends AppCompatActivity {
         met_name = findViewById(R.id.et_name);
         mbtn_return = findViewById(R.id.btn_return);
 
-
         Bundle bundle = getIntent().getExtras();
+        assert bundle != null;
         String name = bundle.getString("name");
-        Integer no = bundle.getInt("No");
+        int no = bundle.getInt("No");
         met_name.setText(name + "," + no);
 
         mbtn_return.setOnClickListener(new View.OnClickListener() {
@@ -33,8 +33,9 @@ public class BActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 Bundle bundle1 = new Bundle();
-                bundle1.putString("return", "LOVE U 3000 TIMES");
+                bundle1.putString("return", "我回来啦~");
                 intent.putExtras(bundle1);
+
                 setResult(Activity.RESULT_OK, intent);
                 finish();
 
