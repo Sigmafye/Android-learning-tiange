@@ -6,18 +6,20 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.matrix.R;
 
-import java.nio.BufferUnderflowException;
-
 public class AFragment extends Fragment {
+    private BFragment bFragment;
     private TextView mTvTitle;
     private Activity mActivity;
+    private Button mBtnChange, mBtnReset;
 
     public static AFragment newInstance(String title) {
         AFragment aFragment = new AFragment();
@@ -33,6 +35,8 @@ public class AFragment extends Fragment {
     //相当于Activity中的setContentView()
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View inflateView = inflater.inflate(R.layout.fragment_a, container, false);
+        //在用replace时会重新渲染，会打印
+        Log.d("AFragment", "----onCreateView----");
         return inflateView;
     }
 
@@ -45,6 +49,33 @@ public class AFragment extends Fragment {
             mTvTitle.setText(getArguments().getString("title"));
         }
 
+        mBtnChange = view.findViewById(R.id.btn_change);
+        mBtnChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (bFragment == null) {
+                    bFragment = new BFragment();
+                }
+
+                //为了保证返回时不重新渲染界面
+                Fragment fragment = getFragmentManager().findFragmentByTag("tagA");
+                if (fragment!= null){
+                    getFragmentManager().beginTransaction().hide(fragment).add(R.id.fl_container, bFragment).addToBackStack(null).commitAllowingStateLoss();
+                } else {
+                    //添加到回退栈中
+                    getFragmentManager().beginTransaction().replace(R.id.fl_container, bFragment).addToBackStack(null).commitAllowingStateLoss();
+
+                }
+            }
+        });
+
+        mBtnReset = view.findViewById(R.id.btn_reset);
+        mBtnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTvTitle.setText("我是新文字");
+            }
+        });
 
 //        if (getActivity() != null) {
 //            // todo ...
