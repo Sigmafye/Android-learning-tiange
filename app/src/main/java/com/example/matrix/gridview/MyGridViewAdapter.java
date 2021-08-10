@@ -24,7 +24,7 @@ class MyGridViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 6;
+        return 30;
     }
 
     @Override
@@ -42,8 +42,6 @@ class MyGridViewAdapter extends BaseAdapter {
         public TextView textview;
     }
 
-    ;
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
@@ -58,8 +56,8 @@ class MyGridViewAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.textview.setText("I just kinda wish you were gay");
-        Glide.with(mcontext).load("https://pic.baike.soso.com/ugc/baikepic2/14901/cut-20180802191530-254053648_jpg_237_296_12180.jpg/300").into(holder.imagview);
+        holder.textview.setText("Love U n+" + position + " times");
+        Glide.with(mcontext).load("https://img0.baidu.com/it/u=2660430160,4119651390&fm=26&fmt=auto&gp=0.jpg").into(holder.imagview);
 
         return convertView;
     }

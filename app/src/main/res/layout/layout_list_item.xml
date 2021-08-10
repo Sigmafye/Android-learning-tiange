@@ -3,39 +3,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:padding="15dp">
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
     <ImageView
         android:id="@+id/iv"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:scaleType="centerCrop"
+        android:scaleType="fitCenter"
         android:background="#000"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingLeft="15dp">
+        android:paddingLeft="10dp">
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="头条"
-            android:textSize="30sp"
-            android:textColor="@color/colorPrimary"/>
+            android:textSize="20sp"
+            android:textColor="@android:color/black"/>
         <TextView
             android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2019-4-1"
-            android:textSize="15sp"
-            android:textColor="@color/colorAccent"/>
+            android:text="2021-08-10"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/darker_gray"/>
         <TextView
             android:id="@+id/tv_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="16 18 20 22 25 30"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:text="这是内容"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/darker_gray"/>
     </LinearLayout>
 
 </LinearLayout>

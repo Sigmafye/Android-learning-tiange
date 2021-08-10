@@ -59,9 +59,9 @@ public class MyListAdapter extends BaseAdapter {
 
         holder.tvtitle.setText("这是标题");
         holder.tvcontent.setText("这是内容");
-        holder.tvtime.setText("这是时间");
+        holder.tvtime.setText("2020-01-12");
 
-        Glide.with(mContext).load("https://pic.taifua.com/me/material-1.png").into(holder.imageView);
+        Glide.with(mContext).load("https://img0.baidu.com/it/u=205441424,1768829584&fm=26&fmt=auto&gp=0.jpg").into(holder.imageView);
         return view;
     }
 }
