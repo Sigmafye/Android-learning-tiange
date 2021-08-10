@@ -39,7 +39,7 @@ public class ContainerActivity extends AppCompatActivity {
         });
 
         //实例化AFragment
-        aFragment = new AFragment();
+        aFragment = AFragment.newInstance("我是参数");
 
         //把AFragment添加到Activity中
 //        getFragmentManager().beginTransaction().add(R.id.fl_container, aFragment).commitAllowingStateLoss();
