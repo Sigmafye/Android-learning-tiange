@@ -19,7 +19,8 @@ public class AFragment extends Fragment {
     private BFragment bFragment;
     private TextView mTvTitle;
     private Activity mActivity;
-    private Button mBtnChange, mBtnReset;
+    private Button mBtnChange, mBtnReset, mBtnMessage;
+    private IOnMessageClick listener;
 
     public static AFragment newInstance(String title) {
         AFragment aFragment = new AFragment();
@@ -28,6 +29,10 @@ public class AFragment extends Fragment {
         //可保证Fragment在重建的时候保持参数的一致性，不用再次传参
         aFragment.setArguments(bundle);
         return aFragment;
+    }
+
+    public interface IOnMessageClick {
+        void iOnClick(String text);
     }
 
     @Nullable
@@ -59,13 +64,23 @@ public class AFragment extends Fragment {
 
                 //为了保证返回时不重新渲染界面
                 Fragment fragment = getFragmentManager().findFragmentByTag("tagA");
-                if (fragment!= null){
+                if (fragment != null) {
                     getFragmentManager().beginTransaction().hide(fragment).add(R.id.fl_container, bFragment).addToBackStack(null).commitAllowingStateLoss();
                 } else {
                     //添加到回退栈中
                     getFragmentManager().beginTransaction().replace(R.id.fl_container, bFragment).addToBackStack(null).commitAllowingStateLoss();
 
                 }
+            }
+        });
+
+        mBtnMessage = view.findViewById(R.id.btn_message);
+        mBtnMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //不推荐。推荐：在Activity中实现一个在Fragment中定义的接口，实现回调，参数由Fragment向Activity传递
+//                ((ContainerActivity) getActivity()).setData("Fragment向Activity传递");
+                listener.iOnClick("Fragment向Activity传递-你好！");
             }
         });
 
@@ -85,9 +100,18 @@ public class AFragment extends Fragment {
     }
 
     @Override
+//    Activity和Fragment发生关系时被调用
     public void onAttach(Context context) {
         super.onAttach(context);
 //        mActivity = (Activity) context; //不推荐
+        try {
+            listener = (IOnMessageClick) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException("Activity必须实现IOnMessageClick接口");
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
+
     }
 
     @Override

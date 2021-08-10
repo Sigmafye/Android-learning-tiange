@@ -6,18 +6,25 @@
     android:orientation="vertical">
 
     <Button
+        android:id="@+id/btn_message"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="给Activity传递消息"
+        android:textAllCaps="false" />
+
+    <Button
         android:id="@+id/btn_change"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="更换为BFragment"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/btn_reset"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="更换TextView的文字内容"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
     <TextView
         android:id="@+id/tv_title"

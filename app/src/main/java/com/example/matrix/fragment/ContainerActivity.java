@@ -6,11 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.matrix.R;
 
-public class ContainerActivity extends AppCompatActivity {
+public class ContainerActivity extends AppCompatActivity implements AFragment.IOnMessageClick {
     private AFragment aFragment;
+    private TextView mTvTitle;
 //    private BFragment bFragment;
 //    private Button mBtnChange;
     boolean tag = false;
@@ -19,6 +21,7 @@ public class ContainerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_container);
+        mTvTitle = findViewById(R.id.tv_title);
 //        mBtnChange = findViewById(R.id.btn_change);
 //
 //        mBtnChange.setOnClickListener(new View.OnClickListener() {
@@ -43,8 +46,16 @@ public class ContainerActivity extends AppCompatActivity {
 
         //把AFragment添加到Activity中
 //        getFragmentManager().beginTransaction().add(R.id.fl_container, aFragment).commitAllowingStateLoss();
-        getSupportFragmentManager().beginTransaction().add(R.id.fl_container, aFragment, "tagA").commitAllowingStateLoss();
+        getSupportFragmentManager().beginTransaction().add(R.id.fl_container, aFragment, "tagA"  ).commitAllowingStateLoss();
         tag = true;
     }
 
+    public void setData(String text) {
+        mTvTitle.setText(text);
+    }
+
+    @Override
+    public void iOnClick(String text) {
+        mTvTitle.setText(text);
+    }
 }
