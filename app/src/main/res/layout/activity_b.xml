@@ -16,4 +16,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="return"/>
+
+    <Button
+        android:id="@+id/btn_jump_a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="跳转到AActivity"
+        android:textAllCaps="false"/>
+
 </LinearLayout>

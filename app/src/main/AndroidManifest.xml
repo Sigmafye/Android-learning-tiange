@@ -26,7 +26,8 @@
         <activity android:name=".recyclerview.RecyclerViewActivity" />
         <activity
             android:name=".jump.BActivity"
-            android:label="B">
+            android:label="B"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.example.action.BActivity" />
 
@@ -35,7 +36,9 @@
         </activity>
         <activity
             android:name=".jump.AActivity"
-            android:label="A" />
+            android:label="A"
+            android:launchMode="singleTask"
+            android:taskAffinity=".exampleAffinity"/>
         <activity android:name=".CustomDialogActivity" />
         <activity android:name=".ProgressActivity" />
         <activity android:name=".ToastActivity" />
