@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LifeCycleActivity"></activity>
+        <activity android:name=".fragment.ContainerActivity"></activity>
+        <activity android:name=".LifeCycleActivity" />
         <activity
             android:name=".TestActivity"
             android:label="Test"
@@ -38,7 +39,7 @@
             android:name=".jump.AActivity"
             android:label="A"
             android:launchMode="singleTask"
-            android:taskAffinity=".exampleAffinity"/>
+            android:taskAffinity=".exampleAffinity" />
         <activity android:name=".CustomDialogActivity" />
         <activity android:name=".ProgressActivity" />
         <activity android:name=".ToastActivity" />

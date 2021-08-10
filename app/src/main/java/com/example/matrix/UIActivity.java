@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.matrix.fragment.ContainerActivity;
 import com.example.matrix.gridview.GridViewActivity;
 import com.example.matrix.listview.ListViewActivity;
 import com.example.matrix.jump.AActivity;
@@ -26,6 +27,7 @@ public class UIActivity extends AppCompatActivity {
     private Button mBtnPopup;
     private Button mBtnRecycler;
     private Button mBtnLifecycle;
+    private Button mBtnFragment;
 
     @Override
     protected void onCreate(Bundle saveInstanceState) {
@@ -46,6 +48,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnPopup = findViewById(R.id.btn_popup);
         mBtnRecycler = findViewById(R.id.btn_recyclerview);
         mBtnLifecycle = findViewById(R.id.btn_lifecycle);
+        mBtnFragment = findViewById(R.id.btn_fragment);
 
         setLisenters();
     }
@@ -67,6 +70,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnPopup.setOnClickListener(onClick);
         mBtnRecycler.setOnClickListener(onClick);
         mBtnLifecycle.setOnClickListener(onClick);
+        mBtnFragment.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener {
@@ -115,6 +119,9 @@ public class UIActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_lifecycle:
                     intent = new Intent(UIActivity.this, LifeCycleActivity.class);
+                    break;
+                case R.id.btn_fragment:
+                    intent = new Intent(UIActivity.this, ContainerActivity.class);
                     break;
                 default:
                     break;
