@@ -69,6 +69,10 @@ public boolean dispatchTouchEvent(MotionEvent event) {
 > 如果在期间return true。则不会继续传递。  
 
 ## storage
+> **Mi6的程序打印**
+> **外部公有自建目录**：D/storageDirectory: /storage/emulated/0/matrix  
+> **外部公有类型目录**：D/storagePublicDirectory: /storage/emulated/0/Music  
+> **外部私有**：D/Ex private: /storage/emulated/0/Android/data/com.example.matrix/cache  
 ### Internal
 Internal storage directories:
 > /data/data/ < applicationId> /shared_ _prefs  
@@ -107,5 +111,5 @@ sagit:/data/data/com.example.matrix/shared_prefs $
 Would not be deleted when App is uninstalled.
 > Environment.getExternalStoragePublicDirectory(int type)
 #### private
-> /mnt/sdcard/Android/data/data/ < applicationId> /cache
+> /mnt/sdcard/Android/data/data/ < applicationId> /cache  
 > /mnt/sdcard/Android/data/data/ < applicationId> /files

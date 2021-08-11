@@ -1,6 +1,8 @@
 package com.example.matrix;
 
+import android.Manifest;
 import android.content.Intent;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
         mBtnData = findViewById(R.id.btn_data);
 
         setListeners();
+
+        //TODO:此处应该为一完整体系，动态请求外部存储的权限。重点：sdk23以后！！！
+        ActivityCompat.requestPermissions(this, new String[]{
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+        }, 1);
     }
 
     private void setListeners() {
