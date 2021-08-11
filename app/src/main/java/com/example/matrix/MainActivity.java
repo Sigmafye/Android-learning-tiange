@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.matrix.datastorage.DataStorageActivity;
 import com.example.matrix.fragment.ContainerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mBtnView, mBtnToast, mBtnDialog, mBtnActivity, mBtnFragment, mBtnEvent;
+    private Button mBtnView, mBtnToast, mBtnDialog,
+            mBtnActivity, mBtnFragment, mBtnEvent, mBtnData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnActivity = findViewById(R.id.btn_activity);
         mBtnFragment = findViewById(R.id.btn_fragment);
         mBtnEvent = findViewById(R.id.btn_event);
+        mBtnData = findViewById(R.id.btn_data);
 
         setListeners();
     }
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnActivity.setOnClickListener(onClick);
         mBtnFragment.setOnClickListener(onClick);
         mBtnEvent.setOnClickListener(onClick);
+        mBtnData.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener {
@@ -64,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_event:
                     intent = new Intent(MainActivity.this, EventActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_data:
+                    intent = new Intent(MainActivity.this, DataStorageActivity.class);
                     startActivity(intent);
                     break;
                 default:

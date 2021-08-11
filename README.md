@@ -66,4 +66,32 @@ public boolean dispatchTouchEvent(MotionEvent event) {
 > **过程分析：**  
 > 在ACTION_DOWN之后会有100ms的检测，如果手指没有离开屏幕，则再执行400ms的检测，即一个长按事件需要500m来触发  
 > 如果在这期间手指离开控件，则取消执行onTouchEvent。  
-> 如果在期间return true。则不会继续传递。
+> 如果在期间return true。则不会继续传递。  
+
+## storage
+### SharedPreferences 
+存储位置：/data/data/<applicationId>/shared_prefs/<fileName>.xml
+applicationId不一定就是包名  
+fileName就是getSharedPreferences(String name, int mode)的name参数  
+示例：
+```shell script
+PS C:\Users\Administrator\Desktop> adb shell
+adb server version (32) doesn't match this client (41); killing...
+* daemon started successfully
+sagit:/ $ run-as com.example.matrix
+
+sagit:/data/data/com.example.matrix $ ls
+app_textures app_webview cache code_cache shared_prefs
+
+sagit:/data/data/com.example.matrix $ cd shared_prefs/
+sagit:/data/data/com.example.matrix/shared_prefs $ ls
+WebViewChromiumPrefs.xml data.xml
+
+sagit:/data/data/com.example.matrix/shared_prefs $ cat data.xml
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="name">textColor</string>
+</map>
+
+sagit:/data/data/com.example.matrix/shared_prefs $
+```
