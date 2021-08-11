@@ -31,3 +31,37 @@ Activity是由任务栈管理的,每启动一个Activity ,就会被放入栈中,
 > 监听器-->控件本身-->向外传播。   
 > return true:不会继续向外传播  
 > return false:继续向外传播
+
+## dispatcher
+``` 
+D/MyButton: ---dispatchTouchEvent---
+D/OnTouchListener: ---onTouch---
+D/MyButton: ----onTouchEvent----
+D/MyButton: ---dispatchTouchEvent---
+I/chatty: uid=10135(com.example.matrix) identical 1 line
+D/MyButton: ---dispatchTouchEvent---
+D/Listener: ---onClick---  
+```
+> 源代码  View.dispatchTouchEvent()  
+> dispatchTouchEvent->setOnTouchListener->onTouchEvent
+> onClick/onLongClick来自onTouchEvent的处理
+```java
+public boolean dispatchTouchEvent(MotionEvent event) {
+            //noinspection SimplifiableIfStatement
+            ListenerInfo li = mListenerInfo;
+            if (li != null && li.mOnTouchListener != null
+                    && (mViewFlags & ENABLED_MASK) == ENABLED
+                    && li.mOnTouchListener.onTouch(this, event)) {  //如果自己定义的OnTouchListener为true,那么返回true
+                result = true;
+            }
+            //执行onTouchEvent
+            if (!result && onTouchEvent(event)) {
+                result = true;
+            }
+        }
+        return result;
+    }
+```
+> 过程分析：  
+> 在ACTION_DOWN之后会有100ms的检测，如果手指没有离开屏幕，则再执行400ms的检测，即一个长按事件需要500m来触发  
+> 如果在这期间手指离开控件，则取消执行onTouchEvent。

@@ -26,10 +26,16 @@ public class EventActivity extends AppCompatActivity implements View.OnClickList
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        Log.d("OnTouchListener", "---onTouch---");
+                        Log.d("Listener", "---onTouch---");
                         break;
                 }
                 return false;
+            }
+        });
+        btnMy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("Listener", "---onClick---");
             }
         });
 
@@ -90,7 +96,7 @@ public class EventActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    //基于回调
+    //基于回调--也是为了对比MyButton的onTouchEvent
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {

@@ -20,16 +20,25 @@ public class MyButton extends AppCompatButton {
         super(context, attrs, defStyleAttr);
     }
 
+    @Override
+    //所有触摸事件的从这开始分发
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        Log.d("MyButton", "---dispatchTouchEvent---");
+        return super.dispatchTouchEvent(event);
+    }
+
     //基于回调
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        super.onTouchEvent(event);
+
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 Log.d("MyButton", "----onTouchEvent----");
                 break;
         }
         //继续传播
-        return false;
+//        return false;
+
+        return super.onTouchEvent(event);
     }
 }
