@@ -43,8 +43,9 @@ D/MyButton: ---dispatchTouchEvent---
 D/Listener: ---onClick---  
 ```
 > 源代码  View.dispatchTouchEvent()  
-> dispatchTouchEvent->setOnTouchListener->onTouchEvent  
-> onClick/onLongClick来自onTouchEvent的处理
+> onClick/onLongClick来自onTouchEvent的处理  
+
+**dispatchTouchEvent -> setOnTouchListener -> onTouchEvent**  
 ```java
 public boolean dispatchTouchEvent(MotionEvent event) {
             //noinspection SimplifiableIfStatement
@@ -62,7 +63,7 @@ public boolean dispatchTouchEvent(MotionEvent event) {
         return result;
     }
 ```
-> 过程分析：  
+> **过程分析： **
 > 在ACTION_DOWN之后会有100ms的检测，如果手指没有离开屏幕，则再执行400ms的检测，即一个长按事件需要500m来触发  
 > 如果在这期间手指离开控件，则取消执行onTouchEvent。  
 > 如果在期间return true。则不会继续传递。
