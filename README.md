@@ -70,6 +70,12 @@ public boolean dispatchTouchEvent(MotionEvent event) {
 
 ## storage
 ### Internal
+Internal storage directories:
+> /data/data/ < applicationId> /shared_ _prefs  
+> /data/data/ <applicationId> /databases  
+> /data/data/ <applicationId> /files  
+> /data/data/ <applicationId> /cache  
+> context.getCacheDir(); context.getFilesDir()  
 #### SharedPreferences 
 存储位置：/data/data/<applicationId>/shared_prefs/<fileName>.xml
 applicationId不一定就是包名  
@@ -96,3 +102,10 @@ sagit:/data/data/com.example.matrix/shared_prefs $ cat data.xml
 
 sagit:/data/data/com.example.matrix/shared_prefs $
 ```
+### External
+#### pulic
+Would not be deleted when App is uninstalled.
+> Environment.getExternalStoragePublicDirectory(int type)
+#### private
+> /mnt/sdcard/Android/data/data/ <applicationId> /cache
+> /mnt/sdcard/Android/data/data/ <applicationId> /files
