@@ -72,12 +72,12 @@ public boolean dispatchTouchEvent(MotionEvent event) {
 ### Internal
 Internal storage directories:
 > /data/data/ < applicationId> /shared_ _prefs  
-> /data/data/ <applicationId> /databases  
-> /data/data/ <applicationId> /files  
-> /data/data/ <applicationId> /cache  
+> /data/data/ < applicationId> /databases  
+> /data/data/ < applicationId> /files  
+> /data/data/ < applicationId> /cache  
 > context.getCacheDir(); context.getFilesDir()  
 #### SharedPreferences 
-存储位置：/data/data/<applicationId>/shared_prefs/<fileName>.xml
+存储位置：/data/data/<applicationId>/shared_prefs/<fileName>.xml  
 applicationId不一定就是包名  
 fileName就是getSharedPreferences(String name, int mode)的name参数  
 示例：
@@ -107,5 +107,5 @@ sagit:/data/data/com.example.matrix/shared_prefs $
 Would not be deleted when App is uninstalled.
 > Environment.getExternalStoragePublicDirectory(int type)
 #### private
-> /mnt/sdcard/Android/data/data/ <applicationId> /cache
-> /mnt/sdcard/Android/data/data/ <applicationId> /files
+> /mnt/sdcard/Android/data/data/ < applicationId> /cache
+> /mnt/sdcard/Android/data/data/ < applicationId> /files
