@@ -69,7 +69,8 @@ public boolean dispatchTouchEvent(MotionEvent event) {
 > 如果在期间return true。则不会继续传递。  
 
 ## storage
-### SharedPreferences 
+### Internal
+#### SharedPreferences 
 存储位置：/data/data/<applicationId>/shared_prefs/<fileName>.xml
 applicationId不一定就是包名  
 fileName就是getSharedPreferences(String name, int mode)的name参数  
