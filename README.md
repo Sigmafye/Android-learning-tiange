@@ -74,7 +74,7 @@ public boolean dispatchTouchEvent(MotionEvent event) {
 applicationId不一定就是包名  
 fileName就是getSharedPreferences(String name, int mode)的name参数  
 示例：
-```shell script
+```bash
 PS C:\Users\Administrator\Desktop> adb shell
 adb server version (32) doesn't match this client (41); killing...
 * daemon started successfully
