@@ -13,7 +13,7 @@ Activity是由任务栈管理的,每启动一个Activity ,就会被放入栈中,
 > Task栈内复用模式  
 <b>Remember the taskAffinity should start with "."</b>
 在同一个任务栈中,如果要启动的目标Activity已经在栈中,则会复用该Activity ,并调用其onNewIntent()方法,并且该Activity.上面的Activity会被清除;如果栈中没有,则创建新的实例。
-可通过`android:taskAffinity=".exampleAffinity"`实现任务栈的指定，任务栈默认是包名
+可通过`android:taskAffinity=".exampleAffinity"`实现任务栈的指定，任务栈默认是包名。
 
 ### singleInstance
 > 全局单例模式  
