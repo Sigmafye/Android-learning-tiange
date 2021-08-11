@@ -1,5 +1,6 @@
 package com.example.matrix;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,7 +12,7 @@ import android.widget.Toast;
 import com.example.matrix.widget.MyButton;
 
 public class EventActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button mBtnEvent;
+    private Button mBtnEvent, mBtnHandler;
     private MyButton btnMy;
 
     @Override
@@ -60,6 +61,15 @@ public class EventActivity extends AppCompatActivity implements View.OnClickList
          * Toast.makeText(EventActivity.this, "activity class--click...", Toast.LENGTH_SHORT).show();
          * 所需参数
          */
+
+
+        mBtnHandler = findViewById(R.id.btn_handler);
+        mBtnHandler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), HandlerActivity.class));
+            }
+        });
 
     }
 
