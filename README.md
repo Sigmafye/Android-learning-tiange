@@ -19,4 +19,14 @@ Activity是由任务栈管理的,每启动一个Activity ,就会被放入栈中,
 > 全局单例模式
 全局复用,不管哪个Task栈,只要存在目标Activity ,就复用。每个Activity占有一个新的Task栈。
 
+## listener
+监听三要素
+- Event Source(事件源)
+- Event(事件)
+- Event Listener(事件监听器)
 
+## 基于回调的时间处理机制
+> 当回调和监听同时存在：
+> 监听器-->控件本身-->向外传播。
+> return true:不会继续向外传播
+> return false:继续向外传播
