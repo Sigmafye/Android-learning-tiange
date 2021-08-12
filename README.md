@@ -69,7 +69,7 @@ public boolean dispatchTouchEvent(MotionEvent event) {
 > 如果在期间return true。则不会继续传递。  
 
 ## storage
-> **Mi6的程序打印**
+> **Mi6的程序打印**：  
 > **外部公有自建目录**：D/storageDirectory: /storage/emulated/0/matrix  
 > **外部公有类型目录**：D/storagePublicDirectory: /storage/emulated/0/Music  
 > **外部私有**：D/Ex private: /storage/emulated/0/Android/data/com.example.matrix/cache  
@@ -81,7 +81,7 @@ Internal storage directories:
 > /data/data/ < applicationId> /cache  
 > context.getCacheDir(); context.getFilesDir()  
 #### SharedPreferences 
-存储位置：/data/data/<applicationId>/shared_prefs/<fileName>.xml  
+存储位置：/data/data/< applicationId>/shared_prefs/< fileName>.xml  
 applicationId不一定就是包名  
 fileName就是getSharedPreferences(String name, int mode)的name参数  
 示例：
@@ -107,7 +107,7 @@ sagit:/data/data/com.example.matrix/shared_prefs $ cat data.xml
 sagit:/data/data/com.example.matrix/shared_prefs $
 ```
 ### External
-#### pulic
+#### public
 Would not be deleted when App is uninstalled.
 > Environment.getExternalStoragePublicDirectory(int type)
 #### private
