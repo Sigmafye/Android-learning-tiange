@@ -14,7 +14,6 @@
         android:id="@+id/tv_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="abd"
         android:gravity="center"
         android:layout_marginTop="50dp"
         android:textSize="20sp"

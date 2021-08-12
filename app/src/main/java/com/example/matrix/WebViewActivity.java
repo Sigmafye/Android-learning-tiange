@@ -57,8 +57,8 @@ public class WebViewActivity extends AppCompatActivity {
             super.onPageFinished(view, url);
             Log.d("webview", "onPageFinished...");
             //执行js代码的方式
-            mWvMain.loadUrl("javascript:alert('hello')");
-            mWvMain.evaluateJavascript("javascript:alert('world')", null);
+//            mWvMain.loadUrl("javascript:alert('hello')");
+//            mWvMain.evaluateJavascript("javascript:alert('world')", null);
         }
     }
     //网页设置

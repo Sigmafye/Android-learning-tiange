@@ -48,7 +48,7 @@ public class BroadActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             switch (intent.getAction()) {
                 case "com.demo.update":
-                    mTvTest.setText("received!");
+                    mTvTest.setText("received something from other place!");
                     break;
             }
         }
