@@ -45,6 +45,14 @@
         android:textAllCaps="false"/>
 
     <Button
+        android:id="@+id/btn_broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Broadcast"
+        android:textSize="16sp"
+        android:textAllCaps="false"/>
+
+    <Button
         android:id="@+id/btn_event"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

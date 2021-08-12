@@ -8,13 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.matrix.broadcast.BroadActivity;
 import com.example.matrix.datastorage.DataStorageActivity;
 import com.example.matrix.fragment.ContainerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button mBtnView, mBtnToast, mBtnDialog,
-            mBtnActivity, mBtnFragment, mBtnEvent, mBtnData;
+            mBtnActivity, mBtnFragment, mBtnEvent, mBtnData, mBtnBroadcast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnFragment = findViewById(R.id.btn_fragment);
         mBtnEvent = findViewById(R.id.btn_event);
         mBtnData = findViewById(R.id.btn_data);
+        mBtnBroadcast = findViewById(R.id.btn_broadcast);
 
         setListeners();
 
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnFragment.setOnClickListener(onClick);
         mBtnEvent.setOnClickListener(onClick);
         mBtnData.setOnClickListener(onClick);
+        mBtnBroadcast.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener {
@@ -71,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_fragment:
                     intent = new Intent(MainActivity.this, ContainerActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_broadcast:
+                    intent = new Intent(MainActivity.this, BroadActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.btn_event:
